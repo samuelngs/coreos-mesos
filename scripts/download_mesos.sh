@@ -12,8 +12,6 @@ VERSION=`cat $ROOT_DIR/version`
 
 MIRROR_URL=http://www.us.apache.org/dist/mesos
 
-MESOS_DEFAULT_VERSION=0.26.0
-
 unset MESOS_DEFAULT_VERSION
 while read -r i; do
     if [[ $i == $MESOS_VERSION ]]; then
