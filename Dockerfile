@@ -6,7 +6,7 @@ ENV JAVA_HOME /usr/lib/jvm/default-jvm
 ENV MAVEN_HOME /usr/share/java/maven-3.3.3
 
 ENV MESOS_HOME /usr/lib/mesos
-ENV PATH ${PATH}:${MESOS_HOME}/bin
+ENV PATH ${PATH}:${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${MESOS_HOME}/bin
 
 # Add files
 ADD releases/current $MESOS_HOME
@@ -17,7 +17,7 @@ WORKDIR $MESOS_HOME
 
 RUN echo http://dl-4.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories &&\
 # Install Deps
-    apk add --update alpine-sdk zlib-dev curl-dev apr-dev subversion-dev cyrus-sasl-dev cyrus-sasl-crammd5 openjdk7-jre maven python-dev fts-dev &&\
+    apk add --update alpine-sdk zlib-dev curl-dev apr-dev subversion-dev cyrus-sasl-dev cyrus-sasl-crammd5 openjdk7-jre maven python-dev fts-dev linux-headers &&\
 # Cleanup
     rm -rf /tmp/* \
            /var/cache/apk/* &&\
