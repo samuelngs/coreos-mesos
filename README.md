@@ -1,6 +1,14 @@
 # coreos-mesos
 Mesos instance(s) on your CoreOS cluster
 
+## Build
+
+Run `make` to build docker image
+
+```Makefile
+$ make
+```
+
 ## License
 
 This project is distributed under the MIT license found in the [LICENSE](./LICENSE) file.
